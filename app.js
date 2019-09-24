@@ -28,6 +28,10 @@ app.get('/pleh', (req, res) => {
     tweet(content)
 })
 
+app.get('/thanks', (req, res) => {
+    res.render('thanks')
+})
+
 app.listen(port,() => {
     console.log('Server Live')
 })
