@@ -10,16 +10,30 @@ const twitter = new Twitter({
    access_token_secret: process.env.ACTS
 });
 
-
-function tweet(content) {
-    if (filter.isProfane(content)){
-        twitter.post('statuses/update', {status: content}, function (error, twt, res){
-            console.log(error ? error : 'Tweet is out there');
-            console.log(twt, res)
-        })
+function check(content, res) {
+    let canPost = filter.isProfane(content);
+    if (!canPost){
+        tweetText(content, res)
+    } else {
+        errorResponse(res)
     }
 }
 
-module.exports = {
-    tweet
+
+function errorResponse(res) {
+    res.redirect('/error')
 }
+
+
+function tweetText(content, res) {
+    twitter.post('statuses/update', {status: content}, function (error, twt, res) {
+        console.log(error ? error : twt);
+    });
+    res.redirect('/thanks')
+}
+
+module.exports = {
+    tweetText,
+    errorResponse,
+    check
+};

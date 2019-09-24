@@ -2,4 +2,34 @@
     width: 50%;
     height: 600px;
     overflow: scroll;
+    border: black 1px solid;
+    float: right;
+}
+
+
+#header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 3rem;
+}
+
+.form-post {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form-item {
+    padding: 5px;
+    margin: 10px;
+}
+label {
+    text-align: center;
 }

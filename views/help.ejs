@@ -10,10 +10,10 @@
 </head>
 <body>
     <!-- This should be a post method -->
-    <form method="GET" action="/pleh">
+    <form method="GET" action="/pleh" class="form-post">
         <label for="tweet">Tweet</label>
-        <input class="button-primary" type='text' name='content' id="tweet">
-        <button type="submit">Yell At the World</button>
+        <textarea class="button-primary form-item" type='text' name='content' id="tweet" maxlength="280" cols="60"></textarea>
+        <button type="submit" class="form-item">Yell At the World</button>
     </form>
 </body>
 </html>
