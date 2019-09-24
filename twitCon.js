@@ -26,8 +26,9 @@ function errorResponse(res) {
 
 
 function tweetText(content, res) {
-    twitter.post('statuses/update', {status: content}, function (error, twt, res) {
-        console.log(error ? error : twt);
+    let message = content + "\n #AnonTweet";
+    twitter.post('statuses/update', {status: message}, function (error, twt, res) {
+        console.log(error ? error : "Tweet posted");
     });
     res.redirect('/thanks')
 }

@@ -6,14 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Post</title>
 </head>
 <body>
     <!-- This should be a post method -->
     <form method="GET" action="/pleh" class="form-post">
         <label for="tweet">Tweet</label>
-        <textarea class="button-primary form-item" type='text' name='content' id="tweet" maxlength="280" cols="60" placeholder="Tweet, Max length 280"></textarea>
+        <textarea class="button-primary form-item" type='text' name='content' id="tweet" maxlength="260" cols="60" placeholder="Tweet, Max length 260"></textarea>
+        <label id="tweet-length">Tweet length</label>
         <button type="submit" class="form-item">Yell At the World</button>
     </form>
+
+
+<script>
+    let tweet = document.getElementById('tweet');
+    let length = document.getElementById('tweet-length');
+    tweet.addEventListener('keyup', () => {
+        // console.log(tweet.value.length);
+        length.textContent = `Tweet length: ${tweet.value.length}`;
+    })
+
+</script>
 </body>
 </html>
