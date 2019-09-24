@@ -12,6 +12,11 @@ app.get('/help', (req, res) => {
     res.render('help')
 })
 
+app.post('/pleh', (req, res) => {
+    let content = req.params.content
+    console.log(content)
+})
+
 app.listen(port,() => {
     console.log('Server Live')
 })
