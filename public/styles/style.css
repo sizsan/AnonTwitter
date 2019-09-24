@@ -3,7 +3,19 @@
     height: 600px;
     overflow: scroll;
     border: black 1px solid;
-    float: right;
+    position: absolute;
+    right: 50px;
+    top: 70px;
+}
+
+.embbed2 {
+    text-align: center;
+    width: 50%;
+    height: 600px;
+    overflow: scroll;
+    position: absolute;
+    left: 50px;
+    top: 100px;
 }
 
 
